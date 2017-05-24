@@ -104,7 +104,7 @@ C_hist = (Q_MAX_walk / Vs)
 
 hist1 = plt.figure()
 plt.hist(C_hist, bins='auto', edgecolor='black', linewidth=1.2 ,normed=True)  
-plt.title("Histogram Valores de C ")
+plt.title("Histograma Valores de C ")
 plt.ylabel(r'',fontsize=16)
 plt.xlabel(r'C (F)',fontsize=16,  color='Black')
 hist1.savefig('Hist_C.png')
