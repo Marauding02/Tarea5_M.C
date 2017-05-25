@@ -1,0 +1,107 @@
+\documentclass[twoside]{article}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{enumerate}
+%---------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{\vspace{-15mm}\fontsize{20pt}{12pt}\selectfont\textbf{ Monte Carlo}} 
+
+\author{
+  Sebastian Del Rio Navarro\\
+  \texttt{201417736}\\
+  }
+ 
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\maketitle % Insert title
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+
+\section{Introduccion}
+
+
+Los métodos de Montecarlo abarcan una coleccion de técnicas que permiten obtener soluciones de problemas matematicos o fisicos por medio de pruebas aleatorias repetidas. En la practica, las pruebas aleatorias se sustituyen por resultados de ciertos calculos realizados con números aleatorios. Se estudiara el concepto de variable aleatoria y la transformacion de una variable aleatoria discreta o continua.
+
+
+%------------------------------------------------
+
+\section{Canales Ionicos}
+
+
+\pagebreak
+%-----------------------------------------------
+
+\section{Circuito RC}
+
+A partir de unos datos experimentales de tiempo(t) y carga(Q) de un circuito RC, se utilizo un metodo de determinacion bayesiana de parámetros con Monte Carlo para obtener R y C.
+
+\begin{centering}
+\includegraphics[scale=0.7]{veroR.png}
+\captionof{figure}{R en funcion de verosimilitud}
+\end{centering}
+
+\begin{centering}
+\includegraphics[scale=0.7]{Hist_R.png}
+\captionof{figure}{Histograma valor de R }
+\end{centering}
+
+\begin{centering}
+\includegraphics[scale=0.7]{veroC.png}
+\captionof{figure}{C en funcion de verosimilitud}
+\end{centering}
+
+
+\begin{centering}
+\includegraphics[scale=0.7]{Hist_C.png}
+\captionof{figure}{Histograma valor de  C}
+\end{centering}
+
+
+
+\begin{centering}
+\includegraphics[scale=0.7]{best_fit.png}
+\captionof{figure}{Best Fit}
+\end{centering}
+
+
+\vspace{5mm}
+
+$\bullet$ Al realizar este método ocurrio lo siguiente:
+Al inicio con un un guess random de los valores de Q y $\tau$ , se encontro que tras realizar un sinnúmero de intentos, el valor aproximado de Q Y $\tau$ , estaba dentro de 98 y 0.01 aproximadamente ., por lo cual se coloco esta restriccion en lugar de un lanzamiento completamente aleatorio.
+
+\vspace{5mm}
+
+$\bullet$Al analizar los valores que mejor se ajustan a los datos experimentales, se encontro que R y C oscilan entre los valores de:  5.4 $\Omega$ - 5.7 $\Omega$ y 9.7 F - 9.9 F respectivamente.
+
+
+
+$\bullet$ Como modelo de verosimilitud se utilizo la ecuacion.
+\begin{equation}
+    Vc = Vs(1-e^{\frac{-t}{RC}})
+\end{equation}
+Donde: 
+\begin{itemize}
+    \item $RC = \tau $ , es la constante de tiempo de un circuito RC 
+    \item Vs Voltaje inicial 
+    \item Vc voltaje a través del Capacitor
+    \item t es el tiempo desde la aplicacion del voltaje Vs
+\end{itemize}
+
+
+
+
+
+\end{document}
