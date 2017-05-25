@@ -95,16 +95,36 @@ R = 1 / (best_TAU * C )
 print("Best value for R = " , R , "Ohm")
 
 
-#Histogramas de R y C 
+#Histogramas y gráficas de R y C 
 R_hist = np.empty((0))
 R_hist = 1 / (TAU_walk * C )  
 
 C_hist = np.empty((0))
 C_hist = (Q_MAX_walk / Vs)
 
+#Histogramas y gráficas de R y C 
+
+veroR=plt.figure()
+s=121
+plt.scatter(R_hist, -np.log(l_walk),color='r', s=s/2, alpha=.4)
+plt.title("Verosimilitud vs R ")
+plt.ylabel(r'Verosimilitud',fontsize=16)
+plt.xlabel(r'R(Ohm)',fontsize=16,  color='Black')
+veroR.savefig('veroR.png')
+
+
+
+veroC=plt.figure()
+s=121
+plt.scatter(C_hist, -np.log(l_walk),color='r', s=s/2, alpha=.4)
+plt.title("Verosimilitud vs C ")
+plt.ylabel(r'Verosimilitud',fontsize=16)
+plt.xlabel(r'C (F)',fontsize=16,  color='Black')
+veroC.savefig('veroC.png')
+
 hist1 = plt.figure()
 plt.hist(C_hist, bins='auto', edgecolor='black', linewidth=1.2 ,normed=True)  
-plt.title("Histograma Valores de C ")
+plt.title("Histogram Valores de C ")
 plt.ylabel(r'',fontsize=16)
 plt.xlabel(r'C (F)',fontsize=16,  color='Black')
 hist1.savefig('Hist_C.png')
