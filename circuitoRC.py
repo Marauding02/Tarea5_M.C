@@ -27,6 +27,8 @@ def modelo(t, Q_MAX , TAU):
 TAU_walk = np.empty((0)) 
 Q_MAX_walk = np.empty((0))
 l_walk = np.empty((0))
+R_walk = np.empty((0))
+C_walk = np.empty((0))
 
 #Tras rezalizar un sinnúmero de intentos, se encontró que el valor aproximado de Q Y Tau , estaba dentro de 98 y 0.01 aproximadamente .
 
@@ -137,12 +139,14 @@ plt.xlabel(r'R ( Ohm)',fontsize=16,  color='Black')
 hist2.savefig('Hist_R.png')
 
 #Figura Best fit
+z= "El mejor R es  %f Ohm" %R 
+y= "El mejor C es %f F" %C
 fig1 = plt.figure()
 plt.rc('font', family='serif')
 fig1.suptitle(r'Best fit de los datos , Circuito RC ', fontsize=16,color='Black')
 #Rotulación de ejes de la gráfica y rejilla
-plt.text(200, 60 , r'$ C \approx 9.75$ F', fontsize=12)
-plt.text(200, 50, r'$R \approx 5.46 $ Ohm ',fontsize=12)
+plt.text(140, 60 , z, fontsize=12)
+plt.text(140, 50, y,fontsize=12)
 plt.rc('font', family='serif')
 plt.xlabel(r'Tiempo',fontsize=16,  color='Black')
 plt.rc('font', family='serif')
